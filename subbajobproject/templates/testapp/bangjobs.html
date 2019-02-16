@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/cssjobs.css'%}"/>
+    <title>Bangalore Jobs</title>
+        <style>
+        img{
+        height:200px;
+        width:30%
+        float:left;
+        margin:1.5%
+        border:2px solid red;
+        }
+        body{
+        background:url(https://images.unsplash.com/photo-1503756234508-e32369269deb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80)
+        }
+        img{
+        border:3px solid red;
+        }
+        h1{
+        color:white;
+        text-align:center;
+        background:red;
+        }
+        thead,th{
+        color:white;
+        border:2px solid white;
+        font-size:20px;
+        margin:auto;
+        background:blue;
+        }
+        table{
+        color:black;
+        border:yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>Bangalore Jobs Information</h1>
+<img src="{%static 'images/bang1.jpg'%}">
+<img src="{%static 'images/bang2.jpg'%}">
+<img src="{%static 'images/bang3.jpg'%}">
+<hr>
+{% if Bangjobs_list %}
+<table border="2">
+    <thead>
+    <th>Date</th>
+    <th>Company</th>
+    <th>Title</th>
+    <th>Eligibility</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Phonenumber</th>
+    </thead>
+    {% for job in Bangjobs_list%}
+    <tr>
+        <td>{{job.date}}</td>
+        <td>{{job.company}}</td>
+        <td>{{job.title}}</td>
+        <td>{{job.eiligibility}}</td>
+        <td>{{job.address}}</td>
+        <td>{{job.email}}</td>
+        <td>{{job.phonenumber}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No Jobs Found</p>
+{%endif%}
+</body>
+</html>
