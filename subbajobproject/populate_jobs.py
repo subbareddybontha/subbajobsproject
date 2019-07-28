@@ -18,7 +18,7 @@ def populate(n):
     for i in range(n):
         fdate=fake.date()
         fcompany=fake.company()
-        ftitle=fake.random_element(elements=('Project Manager','Team Lead','Software Enginner'))
+        ftitle=fake.random_element(elements=('Project Manager','Team Lead','Software Enginner','HR','HR Manager'))
         feligible=fake.random_element(elements=('B.Tech','M.Tech','MCA','Ph.D'))
         faddress=fake.address()
         femail=fake.email()
